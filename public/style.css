@@ -1,59 +1,117 @@
+
+:root {
+  --primary-color: #007bff;
+  --background-dark: #1f1f1f;
+  --card-dark: #2c2c2c;
+  --text-light: #f5f5f5;
+  --text-secondary: #aaaaaa;
+  --accent-green: #28a745;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family:sans-serif;
-  margin: 25px;
-  color: #222;
-  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-light);
+  background-color: var(--background-dark);
+}
+
+.container {
+  max-width: 960px;
+  margin: 50px auto;
+  padding: 20px;
 }
 
 h1 {
-  font-weight: bold;
-  
+  font-weight: 700;
+  font-size: 2.5em;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-p {
-  max-width: 900px;
+h2 {
+  font-size: 1.5em;
+  color: var(--text-light);
+  margin-top: 0;
+  border-bottom: 2px solid var(--card-dark);
+  padding-bottom: 10px;
 }
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 
 form {
   margin-bottom: 25px;
-  padding: 15px;
-  background-color: #87D37C;
-  display: inline-block;
-  width: 100%;
-  max-width: 340px;
-  border-radius: 5px;
+  padding: 20px;
+  background-color: var(--card-dark);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
+
 
 input {
   display: block;
-  margin-bottom: 10px;
-  padding: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
   width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
+  border: 1px solid #444;
+  border-radius: 4px;
   font-size: 16px;
+  background-color: #383838;
+  color: var(--text-light);
+}
+
+input::placeholder {
+    color: var(--text-secondary);
 }
 
 input[type=submit] {
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: #E4F1FE;
-  border: 1px solid grey;
-  box-shadow: 2px 2px #999;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 input[type=submit]:hover {
-  background-color: #FFFEC4;
+  background-color: #0056b3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+p {
+  max-width: 900px;
+  color: var(--text-secondary);
 }
 
 code {
   font-family: monospace;
-  font-size: 1.2em;
-  background-color: #FFFEC4;
-  padding: 2px;
+  font-size: 0.95em;
+  background-color: #444; 
+  color: var(--accent-green); 
+  border-radius: 3px;
+}
+
+strong {
+    color: var(--text-light);
 }
